@@ -1,0 +1,32 @@
+package com.example.coinpaprikapractice.compose_components
+
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.example.coinpaprikapractice.model.Coin
+
+@Composable
+fun CoinListItem(coin: Coin){
+    Row(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            text = "${coin.rank}.",
+            color = Color.White)
+
+        Spacer(modifier = Modifier.padding(5.dp))
+
+        Text(
+            text = coin.name,
+            color = if (coin.is_active) Color.Green else Color.Red
+        )
+
+        Spacer(modifier = Modifier.padding(5.dp))
+
+
+    }
+}
